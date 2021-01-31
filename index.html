@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js hw1</title>
+    <script>
+
+        //Задание 1 - конвертация температуры из градусов Цельсия в градусы Фаренгейта
+        var Tc = +prompt('Введите температуру в градусах Цельсия');
+        var Tf = (9 / 5) * Tc + 32;
+        alert('Температура по Фаренгейту составляет: ' + Tf);
+
+        // Задание 2 - работа с переменными
+        var admin;
+        var name = "Василий";
+        admin = name;
+        alert(admin);
+
+        // Задание из лекции - замена двух переменных без третьей
+        var a = 5;
+        var b = 6;
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        alert('число а равно: ' + a);
+        alert('число b равно: ' + b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
