@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Дан код:
+
+            var a = 1, b = 1, c, d;
+            c = ++a; alert(c);           // 2 из-за префикса выводится новое значение
+            d = b++; alert(d);           // 1 из-за постфикса выводится старое значение (вначале выполняется alert, потом уже b++)
+            c = (2+ ++a); alert(c);      // 5 строка 11 делает a = 2, далее к числу 2 добавляем a+1(а++), a становится 3. 2+3 даёт 5, работает благодаря префиксу
+            d = (2+ b++); alert(d);      // 4 то же самое, что и строка выше, но b выдает старое значение
+            alert(a);                    // 3 дважды увеличили a на 1
+            alert(b);                    // 3 дважды увеличили b на 1
+
+        // 2. Чему будет равен x в примере ниже?
+
+            var a = 2;
+            var x = 1 + (a *= 2); //5
+
+        // 3. Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. 
+
+            var a = +prompt('Введите первое число'), b = +prompt('Введите второе число');
+                if(a >= 0 && b >= 0) {
+                    alert(a - b);
+                } else if(a < 0 && b < 0) {
+                    alert(a * b);
+                } else if(a < 0 && b >= 0 || a >= 0 && b < 0) {
+                    alert(a + b);
+                }
+
+        // 4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
+                // с помощью оператора switch
+                var interval = +prompt('Введите число от 0 до 15');
+
+                switch(interval) {
+                    case 0:
+                        console.log(++interval);
+                    case 1:
+                        console.log(++interval);
+                    case 2:
+                        console.log(++interval);
+                    case 3:
+                        console.log(++interval);
+                    case 4:
+                        console.log(++interval);
+                    case 5:
+                        console.log(++interval);
+                    case 6:
+                        console.log(++interval);
+                    case 7:
+                        console.log(++interval);
+                    case 8:
+                        console.log(++interval);
+                    case 9:
+                        console.log(++interval);
+                    case 10:
+                        console.log(++interval);
+                    case 11:
+                        console.log(++interval);
+                    case 12:
+                        console.log(++interval);
+                    case 13:
+                        console.log(++interval);
+                    case 14:
+                        console.log(++interval);
+                    case 15:
+                        console.log('конец интервала');
+                        break;
+                    default:
+                        alert('Вы ввели неправильное число')
+                }
+
+            // с помощью рекурсии
+
+            var n = +prompt('введите число от 0 до 15')
+
+            function interval(n) {
+                if(n > 15) {
+                    console.log('конец интервала');
+                    return;
+                } else if (n < 0) {
+                    console.log('Вы ввели слишком маленькое число');
+                    return;
+                }
+                console.log(n);
+                interval(n + 1);
+            }
+
+            interval(n);
+
+            // 5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.
+
+            function sum(a,b) {
+                return a + b;
+            }
+
+            function difference(a,b) {
+                return a - b;
+            }
+
+            function multiplication(a,b) {
+                return a * b;
+            }
+
+            function division(a,b) {
+                return a / b;
+            }
+
+            //6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).
+
+            // var res;
+            var a = +prompt('введите первое число');
+            var b = +prompt('введите второе число');
+            var operation = prompt('введите знак')
+            function mathOperation(a, b, operation) {
+                let result;
+                switch (operation) {
+                    case '+':
+                        result = sum(a, b);
+                        return result;
+                    case '-':
+                        result = difference(a,b);
+                        return result;
+                    case '*':
+                        result = multiplication(a,b);
+                        return result;
+                    case '/':
+                        result = division(a,b);
+                        return result;
+                }
+            }
+
+            mathOperation(a, b, operation)
+            alert(res);
+
+            // 7. *Сравнить null и 0. Попробуйте объяснить результат.
+
+            // null и 0 имеют разные типы. соответственно, для того, чтобы их сравнить, необходимо сделать приведение к одному типу. согласно таблице в спецификации, null преобразуется в +0. значение +0 равно 0, поэтому операторы "больше" и "меньше" возвращают false. 
+            // при сравнении null == 0, в соотстветствии с абстрактным алгоритмом сравнения для равенств, возвращается false как значение по умолчанию, поскольку значения под алгорим не подходят. 
+            // при сравнении null >= 0, исходя из спецификации, мы получаем: Если null < 0 принимает значение false, то null >= 0 принимает значение true. т.к для сравнения проверка оператором >= проводится только одна проверка
+
+            // 8. *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.
+
+            function power(val,pow) {
+                if (pow == 1) {
+                    return val;
+                } else {
+                    return val * power(val, pow - 1);
+                }
+            }
+
+
+    </script>
+</body>
+</html>
