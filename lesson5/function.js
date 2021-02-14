@@ -1,12 +1,4 @@
 var arr = [
-    // {
-    //     blackLine1:['&#9820;','&#9822;','&#9821;','&#9819;','&#9818;','&#9821;','&#9822;','&#9820;'], 
-    //     blackLine2:['&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;']
-    // },
-    // {
-    //     whiteLine1:['&#9814;','&#9816;','&#9815;','&#9813;','&#9812;','&#9815;','&#9816;','&#9814;'],
-    //     whiteLine2:['&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;']
-    // }
     {name: '&#9820;', x:1, y:'a'}, {name: '&#9822;', x:1, y:'b'}, {name: '&#9821;', x:1, y:'c'},{name: '&#9819;', x:1, y:'d'},
     {name: '&#9818;', x:1, y:'e'}, {name: '&#9821;', x:1, y:'f'}, {name: '&#9822;', x:1, y:'g'}, {name: '&#9820;', x:1, y:'h'},
     {name: '&#9823;', x:2, y:'a'},{name: '&#9823;', x:2, y:'b'},{name: '&#9823;', x:2, y:'c'},{name: '&#9823;', x:2, y:'d'},
@@ -57,19 +49,3 @@ for (let i = 0; i < 10; i++) {
     table.appendChild(tr)
 }
 document.body.appendChild(table);
-
-// var table = document.createElement("table");
-// for (var i = 1; i < 9; i++) {
-//     var tr = document.createElement('tr');
-//     for (var j = 1; j < 9; j++) {
-//         var td = document.createElement('td');
-//         if (i%2 == j%2) {
-//             td.className = "white";
-//         } else {
-//             td.className = "black";
-//         }
-//         tr.appendChild(td);
-//     }
-//     table.appendChild(tr);
-// }
-// document.body.appendChild(table);
