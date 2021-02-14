@@ -1,0 +1,39 @@
+table {
+    font-family: Impact, sans-serif;
+    font-size: 30px;
+    background-color: rgb(226, 210, 188);
+    color: #3a2702;
+}
+td {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td:first-child,
+td:last-child {
+    width: 25px;
+    background-color: rgb(226, 210, 188);
+}
+
+tr:first-child td,
+tr:last-child td {
+    height: 25px;
+    background-color: rgb(226, 210, 188);
+}
+
+tr:first-child td:nth-child(-n + 10){
+    transform: rotate(180deg);
+}
+td:last-child{
+    transform: rotate(180deg);
+}
+
+.white {
+    background-color: rgb(226, 210, 188);
+}
+
+.black {
+    background-color: rgb(155, 100, 51);
+}
