@@ -1,0 +1,9 @@
+.carousel,
+.carousel__images {
+    display: flex;
+}
+
+.carousel__images img, 
+.carousel img {
+    background-color: #ccc;
+}
